@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIRUS - Sistema de Recepción</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Fondo decorativo compartido (login y panel) -->
+  <div class="fondo-app">
+    <svg class="red-fondo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <defs><g id="logo-g" fill="none" stroke-width="9" stroke-linejoin="miter">
+        <path d="M58 8 L26 24 V40 L56 54 V70 L24 86" stroke="#9db0c3" opacity=".55"/>
+        <path d="M50 14 L18 30 V46 L48 60 V76 L16 92" stroke="#4f6479"/>
+      </g><symbol id="persona" viewBox="-10 -10 20 20"><circle cx="0" cy="-3" r="3.4"/><path d="M-6.5 8.5a6.5 5.5 0 0 1 13 0z"/></symbol></defs>
+    <g class="lineas">
+    <line x1="110" y1="120" x2="260" y2="210"/>
+    <line x1="260" y1="210" x2="150" y2="350"/>
+    <line x1="260" y1="210" x2="330" y2="420"/>
+    <line x1="150" y1="350" x2="330" y2="420"/>
+    <line x1="150" y1="350" x2="90" y2="540"/>
+    <line x1="330" y1="420" x2="250" y2="620"/>
+    <line x1="90" y1="540" x2="250" y2="620"/>
+    <line x1="250" y1="620" x2="390" y2="720"/>
+    <line x1="90" y1="540" x2="50" y2="710"/>
+    <line x1="110" y1="120" x2="150" y2="350"/>
+    <line x1="250" y1="620" x2="50" y2="710"/>
+    <line x1="390" y1="720" x2="50" y2="710"/>
+    <line x1="1090" y1="110" x2="940" y2="190"/>
+    <line x1="940" y1="190" x2="1120" y2="340"/>
+    <line x1="940" y1="190" x2="870" y2="400"/>
+    <line x1="1120" y1="340" x2="870" y2="400"/>
+    <line x1="1120" y1="340" x2="1100" y2="540"/>
+    <line x1="870" y1="400" x2="950" y2="630"/>
+    <line x1="1100" y1="540" x2="950" y2="630"/>
+    <line x1="950" y1="630" x2="810" y2="730"/>
+    <line x1="1100" y1="540" x2="1150" y2="720"/>
+    <line x1="1090" y1="110" x2="1120" y2="340"/>
+    <line x1="950" y1="630" x2="1150" y2="720"/>
+    <line x1="810" y1="730" x2="1150" y2="720"/>
+    <line x1="110" y1="120" x2="520" y2="70"/>
+    <line x1="520" y1="70" x2="700" y2="120"/>
+    <line x1="700" y1="120" x2="1090" y2="110"/>
+    <line x1="260" y1="210" x2="520" y2="70"/>
+    <line x1="940" y1="190" x2="700" y2="120"/>
+    <line x1="390" y1="720" x2="560" y2="765"/>
+    <line x1="560" y1="765" x2="670" y2="735"/>
+    <line x1="670" y1="735" x2="810" y2="730"/>
+    <line x1="250" y1="620" x2="560" y2="765"/>
+    <line x1="950" y1="630" x2="670" y2="735"/>
+    </g><g class="puntos">
+    <circle cx="190" cy="60" r="3"/>
+    <circle cx="420" cy="250" r="3"/>
+    <circle cx="60" cy="260" r="3"/>
+    <circle cx="300" cy="520" r="3"/>
+    <circle cx="180" cy="470" r="3"/>
+    <circle cx="1010" cy="60" r="3"/>
+    <circle cx="780" cy="270" r="3"/>
+    <circle cx="1150" cy="230" r="3"/>
+    <circle cx="900" cy="520" r="3"/>
+    <circle cx="1010" cy="430" r="3"/>
+    <circle cx="420" cy="640" r="3"/>
+    <circle cx="780" cy="620" r="3"/>
+    </g>
+    <g class="nodo" style="color:#5b7088" transform="translate(110 120)"><circle class="pulso" r="16" style="animation-delay:0.0s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#3f6fb5" transform="translate(260 210)"><circle class="pulso" r="16" style="animation-delay:0.7s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(150 350)"><circle class="pulso" r="16" style="animation-delay:1.4s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#c9774b" transform="translate(330 420)"><circle class="pulso" r="16" style="animation-delay:2.1s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#3f6fb5" transform="translate(90 540)"><circle class="pulso" r="16" style="animation-delay:2.8s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(250 620)"><circle class="pulso" r="16" style="animation-delay:3.5s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(390 720)"><circle class="pulso" r="16" style="animation-delay:4.2s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#c9774b" transform="translate(50 710)"><circle class="pulso" r="16" style="animation-delay:4.9s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(1090 110)"><circle class="pulso" r="16" style="animation-delay:0.6s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#c9774b" transform="translate(940 190)"><circle class="pulso" r="16" style="animation-delay:1.3s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#3f6fb5" transform="translate(1120 340)"><circle class="pulso" r="16" style="animation-delay:2.0s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(870 400)"><circle class="pulso" r="16" style="animation-delay:2.7s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(1100 540)"><circle class="pulso" r="16" style="animation-delay:3.4s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#3f6fb5" transform="translate(950 630)"><circle class="pulso" r="16" style="animation-delay:4.1s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(810 730)"><circle class="pulso" r="16" style="animation-delay:4.8s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#c9774b" transform="translate(1150 720)"><circle class="pulso" r="16" style="animation-delay:0.5s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#3f6fb5" transform="translate(520 70)"><circle class="pulso" r="16" style="animation-delay:1.2s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(700 120)"><circle class="pulso" r="16" style="animation-delay:1.9s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#5b7088" transform="translate(560 765)"><circle class="pulso" r="16" style="animation-delay:2.6s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    <g class="nodo" style="color:#c9774b" transform="translate(670 735)"><circle class="pulso" r="16" style="animation-delay:3.3s"/><circle class="base" r="16"/><use href="#persona" x="-9" y="-9" width="18" height="18" fill="currentColor"/></g>
+    </svg>
+  </div>
+
+  <!-- ===================== VISTA: INICIO DE SESIÓN ===================== -->
+  <section id="vista-login" class="login-wrap">
+
+    <div class="login-contenido">
+      <div class="marca">
+        <svg class="logo-svg" viewBox="0 0 76 100" aria-hidden="true"><use href="#logo-g"/></svg>
+        <h1>SIRUS</h1>
+        <p class="subtitulo">SISTEMA DE REGISTRO DE ENTRADAS Y SALIDAS</p>
+      </div>
+
+      <div class="login-card">
+        <form id="form-login" novalidate>
+          <label for="login-usuario">Usuario</label>
+          <input type="text" id="login-usuario" autocomplete="username" placeholder="Ingrese su usuario">
+
+          <label for="login-clave">Contraseña</label>
+          <input type="password" id="login-clave" autocomplete="current-password" placeholder="Ingrese su contraseña">
+
+          <button type="submit" id="btn-login" class="btn btn-login btn-bloque">Iniciar sesión</button>
+        </form>
+
+        <div id="login-mensaje" class="mensaje" role="alert" hidden></div>
+      </div>
+
+      <p class="bienvenida">Bienvenido al sistema de acceso residencial SIRUS</p>
+    </div>
+  </section>
+
+  <!-- ===================== VISTA: PANEL PRINCIPAL ===================== -->
+  <main id="vista-panel" hidden>
+
+    <header class="barra">
+      <div class="barra-marca">
+        <svg class="logo-mini" viewBox="0 0 76 100" aria-hidden="true"><use href="#logo-g"/></svg>
+        <div class="marca-textos">
+          <span class="marca-nombre">SIRUS</span>
+          <span class="marca-sub">SISTEMA DE REGISTRO DE ENTRADAS Y SALIDAS</span>
+        </div>
+      </div>
+
+      <div class="barra-der">
+        <span class="chip"><i class="punto"></i><span id="estado-bd-texto"></span></span>
+        <div class="usuario">
+          <span class="avatar" id="avatar-usuario"></span>
+          <div class="usuario-datos">
+            <strong id="nombre-usuario"></strong>
+            <small id="rol-usuario"></small>
+          </div>
+        </div>
+        <button type="button" id="btn-cerrar" class="btn btn-secundario">Cerrar aplicación</button>
+      </div>
+    </header>
+
+    <div class="contenedor">
+
+      <div class="saludo">
+        <div>
+          <h2>Panel de recepción</h2>
+          <p id="fecha-hoy"></p>
+        </div>
+      </div>
+
+      <!-- Resumen -->
+      <section class="stats" aria-label="Resumen">
+        <article class="stat">
+          <span class="stat-icono c-slate"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <div><strong id="stat-total">0</strong><small>Visitantes registrados</small></div>
+        </article>
+        <article class="stat">
+          <span class="stat-icono c-verde"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <div><strong id="stat-dentro">0</strong><small>En sitio ahora</small></div>
+        </article>
+        <article class="stat">
+          <span class="stat-icono c-naranja"><svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg></span>
+          <div><strong id="stat-salieron">0</strong><small>Ya salieron</small></div>
+        </article>
+        <article class="stat">
+          <span class="stat-icono c-azul"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <div><strong id="stat-hoy">0</strong><small>Ingresos de hoy</small></div>
+        </article>
+      </section>
+
+      <div id="mensaje" class="mensaje" role="status" hidden></div>
+
+      <div class="grid">
+        <!-- Formulario -->
+        <section class="tarjeta">
+          <div class="tarjeta-cab">
+            <h2 id="titulo-form">Datos del visitante</h2>
+          </div>
+          <p id="modo-edicion" class="modo" hidden></p>
+
+          <div class="campo">
+            <label for="f-nombre">Nombre completo *</label>
+            <input type="text" id="f-nombre" placeholder="Ej: José Pérez">
+            <small id="err-nombre" class="error-campo" hidden></small>
+          </div>
+          <div class="campo">
+            <label for="f-documento">Documento *</label>
+            <input type="text" id="f-documento" maxlength="20" placeholder="Ej: 1020304050">
+            <small id="err-documento" class="error-campo" hidden></small>
+          </div>
+          <div class="campo">
+            <label for="f-motivo">Motivo de la visita *</label>
+            <select id="f-motivo">
+              <option value="">Seleccione un motivo...</option>
+              <option value="Visita personal">Visita personal</option>
+              <option value="Entrega de domicilio">Entrega de domicilio</option>
+              <option value="Servicio técnico">Servicio técnico</option>
+              <option value="Visita inmobiliaria">Visita inmobiliaria</option>
+              <option value="Otro motivo">Otro motivo</option>
+            </select>
+            <small id="err-motivo" class="error-campo" hidden></small>
+          </div>
+          <div class="campo" id="campo-motivo-otro" hidden>
+            <label for="f-motivo-otro">Especifique el motivo *</label>
+            <input type="text" id="f-motivo-otro" placeholder="Escriba el motivo de la visita">
+            <small id="err-motivo-otro" class="error-campo" hidden></small>
+          </div>
+          <div class="campo">
+            <label for="f-personaVisitar">Persona a visitar *</label>
+            <input type="text" id="f-personaVisitar" placeholder="Ej: María López">
+            <small id="err-personaVisitar" class="error-campo" hidden></small>
+          </div>
+
+          <div class="campo">
+            <label for="f-torre">Piso u oficina *</label>
+            <select id="f-torre">
+              <option value="">Seleccione torre u oficina...</option>
+              <option value="Torre 1">Torre 1</option>
+              <option value="Torre 2">Torre 2</option>
+              <option value="Torre 3">Torre 3</option>
+              <option value="Torre 4">Torre 4</option>
+              <option value="Torre administrativa">Torre administrativa</option>
+            </select>
+            <small id="err-torre" class="error-campo" hidden></small>
+          </div>
+
+          <div class="subpanel-desplegable" id="panel-ubicacion-torre" hidden>
+            <div class="fila-doble">
+              <div class="campo">
+                <label for="f-piso">Piso *</label>
+                <select id="f-piso">
+                  <option value="">Seleccione piso...</option>
+                  <option value="1">Piso 1</option>
+                  <option value="2">Piso 2</option>
+                  <option value="3">Piso 3</option>
+                  <option value="4">Piso 4</option>
+                  <option value="5">Piso 5</option>
+                  <option value="6">Piso 6</option>
+                  <option value="7">Piso 7</option>
+                  <option value="8">Piso 8</option>
+                </select>
+                <small id="err-piso" class="error-campo" hidden></small>
+              </div>
+              <div class="campo">
+                <label for="f-apartamento">Apartamento *</label>
+                <select id="f-apartamento" disabled>
+                  <option value="">Seleccione primero el piso...</option>
+                </select>
+                <small id="err-apartamento" class="error-campo" hidden></small>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="botones">
+            <button type="button" id="btn-registrar" class="btn btn-primario">Registrar</button>
+            <button type="button" id="btn-actualizar" class="btn btn-aviso">Actualizar</button>
+            <button type="button" id="btn-ingreso" class="btn btn-ingreso">Registrar ingreso</button>
+            <button type="button" id="btn-salida" class="btn btn-ok">Registrar salida</button>
+            <button type="button" id="btn-limpiar" class="btn btn-secundario">Limpiar</button>
+          </div>
+
+          <div id="confirmacion" class="confirmacion" hidden></div>
+        </section>
+
+        <!-- Búsqueda + lista -->
+        <section class="tarjeta">
+          <div class="tarjeta-cab">
+            <h2>Visitantes</h2>
+            <span id="contador" class="contador"></span>
+          </div>
+
+          <div class="busqueda">
+            <input type="text" id="f-buscar" placeholder="Buscar visitante (nombre o documento)" aria-label="Buscar visitante">
+            <button type="button" id="btn-buscar" class="btn btn-primario">Buscar</button>
+            <button type="button" id="btn-ver-todos" class="btn btn-secundario">Ver todos</button>
+          </div>
+          <p class="ayuda">Haga clic en una fila para seleccionar al visitante, actualizar datos o registrar su ingreso/salida.</p>
+
+          <div class="tabla-wrap">
+            <table id="tabla">
+              <thead>
+                <tr>
+                  <th>Nombre</th><th>Documento</th><th>Motivo</th><th>Visita a</th>
+                  <th>Piso/Oficina</th><th>Ingreso</th><th>Salida</th><th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <footer class="pie">SIRUS · Sistema de acceso residencial</footer>
+    </div>
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/visitantes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
